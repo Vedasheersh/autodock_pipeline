@@ -4,7 +4,7 @@ import os
 
 def prepare_ligand(infile,outfile):
     print(infile)
-    COMMAND = 'prepare_ligand4.py -l {0} -o {1} -v'.format(infile,outfile)
+    COMMAND = 'prepare_ligand4.py -l {0} -o {1} -v -A hydrogens'.format(infile,outfile)
     return os.system(COMMAND)
 
 def prepare_receptor(infile,outfile):
