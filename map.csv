@@ -1,0 +1,3 @@
+NUM, RECEPTOR, LIGAND, xc, yc, zc, xs, ys, zs
+1, ./rec/ackr.pdb, ./lig/tyr.pdb,-34,24,71,25,25,25
+2, ./rec/bckr.pdb, ./lig/pyr.pdb,-34,24,71,25,25,25
