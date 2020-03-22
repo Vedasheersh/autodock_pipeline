@@ -33,13 +33,17 @@ def make_config(mapping_file):
             first = True
             continue
         items = line.strip().split(',')
-        if len(items) != 9:
+        if len(items) == 0:
+            # Nothing in line skip it
+            continue
+        elif len(items) != 9:
             print('Something wrong in mapping_file!')
             break
-        config = 'config_{0}.txt'.format(int(items[0]))
-        configs.append(config)
-        config_f = open(config,'w')
-        config_f.write(
+        else:
+            config = 'config_{0}.txt'.format(int(items[0]))
+            configs.append(config)
+            config_f = open(config,'w')
+            config_f.write(
 '''receptor = {0}
 ligand = {1}
 
@@ -54,7 +58,7 @@ size_z = {7}
 exhaustiveness = 20
 '''.format(*items[1:])
         )
-        config_f.close()
+            config_f.close()
         
     return configs
 
