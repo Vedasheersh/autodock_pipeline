@@ -103,9 +103,9 @@ def main(map_file,rec_dir,lig_dir,results_dir,vina_bin,submit):
     receptors, ligands = gather_inputs(rec_dir,lig_dir)
     print(receptors,ligands)
     for rec in receptors:
-        prepare_receptor(rec,'{}.pdbqt'.format(rec[:-4]))
+        prepare_receptor(rec,'{0}.pdbqt'.format(rec[:-4]))
     for lig in ligands:
-        prepare_ligand(lig,'{}.pdbqt'.format(lig[:-4]))
+        prepare_ligand(lig,'{0}.pdbqt'.format(lig[:-4]))
     make_jobs(vina_bin,configs,results_dir,submit)
     
 if __name__ == '__main__':  
