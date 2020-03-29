@@ -113,7 +113,7 @@ def make_jobs(vina_bin,configs,results_dir,submit=False):
     submitted = 0
     wrote = 0
     for config in configs:
-        num = int(config.split('_')[-1].format('.txt')[0])
+        num = int(config.split('_')[-1][:-4])
         os.system('mkdir {0}/{1}'.format(results_dir,num))
         job = '''
 #PBS -l nodes=1:ppn=1
